@@ -1,0 +1,7 @@
+{
+  "name": "magicbart/zf2-log",
+  "description": "Module Log for a ZF2 project",
+  "require": {
+    "php": "^5.3.3"
+  }
+}
