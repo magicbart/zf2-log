@@ -106,7 +106,8 @@ class Module implements
                 'logger' => 'Log\Service\Factory\LoggerFactory',
             ),
             'invokables' => array(
-                'Log\Model\LogTable' => 'Log\Model\LogTable'
+                'Log\Model\LogTable' => 'Log\Model\LogTable',
+                'Log\Model\TokenTable' => 'Log\Model\TokenTable',
             ),
         );
     }

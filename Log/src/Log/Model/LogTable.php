@@ -5,8 +5,6 @@ use Zend\Db\Adapter\Adapter as dbAdapter;
 use Zend\Db\TableGateway\TableGateway;
 use Zend\Db\ResultSet\ResultSet;
 use Zend\Db\Sql\Select;
-use Zend\Paginator\Adapter\DbSelect;
-use Zend\Paginator\Paginator;
 
 class LogTable extends TableGateway
 {
@@ -38,25 +36,5 @@ class LogTable extends TableGateway
             $select->limit(4);
         });
         return $resultSet;
-    }
-
-    /**
-     * Search in log
-     * @param int $page
-     * @return Paginator
-     */
-    public function search($page = 1)
-    {
-        $select = new Select();
-        $select->from(array('a' => 'log'))
-            ->columns(array('*'));
-        $select->order('timestamp DESC');
-
-        $adapter = new DbSelect($select, $this->getAdapter(), $this->resultSetPrototype);
-        $paginator = new Paginator($adapter);
-        $paginator->setCurrentPageNumber($page);
-        $paginator->setItemCountPerPage(10);
-        $paginator->setPageRange(3);
-        return $paginator;
     }
 }

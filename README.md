@@ -11,3 +11,9 @@ CREATE TABLE `log` (
 	`priorityName`	TEXT,
 	`message`	TEXT
 );
+
+
+
+CREATE TABLE `token` (
+	`key`	TEXT
+);
